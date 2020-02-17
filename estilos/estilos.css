@@ -1,0 +1,354 @@
+body {
+    background-color: #A0D2E6;
+    font-family: Verdana, Geneva, sans-serif;
+    min-width: 580px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/*----------------------------------------------------------------------Cabecera*/
+/*Quita los subrayados y el color azul del menú*/
+#menu li a {
+    text-decoration: none;
+    color: gray;
+}
+
+/*Cabecera que contiene todos los elementos del menú*/
+
+header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header>div {
+    display: inline-block;
+}
+
+#logoo img {
+    text-align: center;
+    margin: auto;
+}
+
+header img {
+    display: block;
+}
+
+#contact img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+#menu{
+    grid-template-columns: 5fr;
+    grid-template-areas:
+        'migas' 'migas' 'migas' 'migas' 'busqueda'
+        ;
+}
+
+#men li {
+    display: inline-block;
+    border: solid black 2px;
+    padding: 0;
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+#men{
+    grid-area: migas;
+}
+
+li {
+    list-style: none;
+}
+
+
+/*Contenedor de lupa y cuadroBusqueda*/
+#busqueda {
+    grid-area: busqueda;
+    border: 2px solid black;
+    right: 0;
+    bottom: 5px;
+    padding: 5px;
+    border-radius: 40px;
+    margin-right: 5px;
+}
+
+/*Cuadro de busqueda dentro del buscador*/
+#cuadroBusqueda {
+    background-color: #A0D2E6;
+    border: none;
+    width: 70%;
+    margin-right: 10px;
+    height: 20px;
+    margin-left: 4px;
+}
+
+/*Imagen de la lupa dentro del buscador*/
+#lupa {
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding-right: 4px;
+}
+
+
+
+/*----------------------------------------------------------------------Cuerpo*/
+
+/*Cuerpo de la página*/
+main {
+    background-color: #9A9FA8;
+    padding-top: 30px;
+    /*Baja el texto del main*/
+    padding-bottom: 70px;
+    font-family: sans-serif;
+}
+
+/*articulo dentro de main(contenedor de los span que contienen imágenes y textos)*/
+#idiomas {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "titulo titulo titulo aulaVirtual""franc ital eng germ";
+}
+
+#aulaVirtual button {
+    float: right;
+    background-color: #A0D2E6;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/*Título del main*/
+#tituloMain {
+    font-weight: bold;
+    font-size: 30px;
+    padding-left: 5%;
+    grid-area: titulo;
+}
+
+/*Damos tamaño a todas las imágenes dentro del main*/
+#idiomas img {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+}
+
+/*Clase de los span dentro del articulo, Damos el mismo tamaño que a la imagen para que a la hora de pasar el cursor quede bien*/
+.logo {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}
+
+/*Parrafos de .logo*/
+.logo p {
+    position: absolute;
+    display: none;
+    top: 22%;
+    left: 20%;
+    width: 200px;
+    font-weight: bold;
+    transition: 0.9s;
+}
+
+/*Colocamos un borde y aumentamos el tamaño de la imagen al pasar el cursor por encima*/
+#idiomas span:focus,
+#idiomas span:hover,
+#idiomas span:active {
+    border: 2px black solid;
+    border-radius: 30px 30px 30px 30px;
+    width: 300px;
+    height: 300px;
+    background-color: #A0D2E6;
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+#informacion {
+    overflow: hidden;
+    margin-top: 50px;
+}
+
+#informacion h2 {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#informacion section {
+    padding: 15px;
+    width: 50%;
+}
+
+#video{
+    display: grid;
+    grid-template-columns: 1;
+    text-align: center;
+    align-items: center;
+    padding-top: 30px;
+    grid-template-areas: 
+    "b"
+    "a";
+  
+}
+#video>h2{
+    font-size: 30px;
+    grid-area: b;
+}
+#video>iframe{
+    grid-area: a;
+    align-self: center;
+    justify-self: center;
+
+}
+
+.iz {
+    float: left;
+}
+
+.der {
+    float: right;
+}
+
+
+@media screen and (max-width: 900px) {
+    #idiomas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "titulo aulaVirtual""franc ital""eng germ";
+    }
+}
+
+
+/*Tamaño de la pantalla es más alto que largo*/
+@media (max-aspect-ratio: 3/2) {
+
+    #idiomas {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "titulo aulaVirtual""franc ital""eng germ";
+    }
+
+
+    #menu, #oferta, #contact{
+        display: none;
+    }
+    #idiomas span:focus,
+    #idiomas span:hover,
+    #idiomas span:active {
+        border: 2px black solid;
+        border-radius: 30px 30px 30px 30px;
+        width: 200px;
+        height: 200px;
+        background-color: #A0D2E6;
+        opacity: 0.2;
+        transition: 0.5s;
+    }
+    body {
+        width: 500px;
+        min-width: 380px;
+    }
+}
+
+/*----------------------------------------------------------------------*/
+
+footer {
+    background-color: rgb(54, 56, 58);
+    padding: 32px;
+    clear: both;
+    height: 60px;
+
+}
+footer li {
+
+    margin-bottom: 40px;
+    float: right;
+    
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url("../imagenes/redesSociales.png");
+    background-repeat: no-repeat;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:nth-child(1) li {
+    background-position: -2px 0px;
+}
+
+footer a:nth-child(2) li {
+    background-position: -52px 0px;
+}
+
+footer a:nth-child(3) li {
+    background-position: -104px 0px;
+}
+
+header{
+    position: relative;
+    animation-name: entrar;
+    animation-iteration-count: 1;
+    animation-duration: 2s;
+}
+
+@keyframes entrar {
+    from {
+        top: -30%;
+        }
+        to {
+        top: 0%;
+        }
+ }
+
+ @media print{
+     
+    nav, footer, img, #video, button, h1{
+        display: none !important;
+    }
+    body, header, main, aside{
+        float: none !important;
+        width: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    header {
+        grid-area: header;
+    }
+    #informacion {
+        grid-area: info;
+    }
+    #idiomas {
+        grid-area: idiomas;
+    }
+    body{
+        grid-template-columns: 1fr;
+		grid-template-areas:
+            'header'
+            'info'
+			'idiomas'
+			;
+     }
+
+     
+
+    a:after{
+        content: "(" attr(href) ") ";
+    }
+
+}

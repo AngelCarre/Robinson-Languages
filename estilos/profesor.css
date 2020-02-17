@@ -1,0 +1,410 @@
+body {
+    background-color: #A0D2E6;
+    font-family: Verdana, Geneva, sans-serif;
+    display: grid;
+    grid-template-rows: 2fr 1fr 5fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header""nav nav""main aside""footer footer";
+    min-width: 360px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header>div {
+    display: inline-block;
+}
+
+#logoo img {
+    text-align: center;
+    margin: auto;
+}
+
+header img {
+    display: block;
+}
+
+#contact img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#men li {
+    display: inline-block;
+    border: solid black 2px;
+    padding: 0;
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+
+li {
+    list-style: none;
+}
+
+#migas {
+    font-size: 18px;
+    border-bottom: black 1px solid;
+    border-right: black 1px solid;
+}
+
+
+#infoAlumno {
+    width: 400px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: hsl(0, 0%, 0%, 0.5);
+ 
+}
+#infoAlumno div{
+    
+    position: relative;
+    margin: auto;
+    border: black solid 2px;
+    border-radius: 30PX;
+    width: 300px;
+    height: 300px;
+    font-family: sans-serif;
+    font-size: 25px;
+    background-color: #A0D2E6;
+    padding-top: 10px;
+}
+#infoAlumno p{
+    float: left;
+    padding-left: 30px;
+
+}
+
+#infoAlumno img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    float: right;
+    right: 10px;
+    border: black 1px solid;
+    border-radius: 30px;
+    padding: 4px;
+}
+
+#infoAlumno img:focus,
+#infoAlumno img:hover {
+    border: black 2px solid;
+    width: 11px;
+    height: 11px;
+    margin-top: -2px;
+    margin-right: -2px;
+}
+
+#anadirTarea {
+    width: 400px;
+    height: 50px;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    background-color: hsl(0, 0%, 0%, 0.5);
+ 
+}
+#anadirTarea form{
+    
+    position: relative;
+    margin: auto;
+    border: black solid 2px;
+    border-radius: 30PX;
+    width: 250px;
+    height: 100px;
+    font-family: sans-serif;
+    font-size: 25px;
+    background-color: #A0D2E6;
+    padding-top: 10px;
+}
+
+#anadirTarea img {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    float: right;
+    right: 10px;
+    border: black 1px solid;
+    border-radius: 30px;
+    padding: 4px;
+}
+
+#anadirTarea img:focus,
+#anadirTarea img:hover {
+    border: black 2px solid;
+    width: 11px;
+    height: 11px;
+    margin-top: -2px;
+    margin-right: -2px;
+}
+
+main>ul>li {
+    border: solid black 1px;
+    background-color: #9A9FA8;
+    font-size: 30px;
+    box-shadow: black 3px 0px;
+    width: 100%;
+}
+main>ul>li:hover {
+    background-color: rgb(184, 187, 184);
+    font-size: 32px;
+
+}
+main>ul>li>ul>li{
+    background-color: #FDFEFD;
+    font-size: 17px;
+}
+
+main>ul>li>ul>li>ul>li{
+    background-color: #9A9FA8;
+    border: solid black 1px;
+    box-shadow: black 3px 0px;
+    width: 100%;
+}
+
+
+main ul {
+    margin-right: 2vh;
+}
+
+main li>span {
+    border: solid black 1px;
+    width: 100%;
+    display: block;
+}
+
+p>span{
+    float: right;
+    margin-right: 5px;
+}
+
+.anadir{
+    background-color: white;
+}
+main {
+    grid-area: main;
+    background-color: #DCE9EC;
+    
+    overflow: auto;
+}
+
+#notafinal{
+    width: 50px;
+    font-size:  20px;
+    text-align: center;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #DCE9EC;
+    overflow: auto;
+   
+}
+
+footer {
+    grid-area: footer;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+#busqueda {
+    float: right;
+    border: 2px solid black;
+    right: 0;
+    bottom: 5px;
+    padding: 5px;
+    border-radius: 40px;
+    margin-right: 5px;
+    width: 130px;
+}
+
+/*Cuadro de busqueda dentro del buscador*/
+#cuadroBusqueda {
+    border: none;
+    width: 90px;
+    margin-right: 10px;
+    height: 20px;
+    margin-left: 4px;
+    background-color: #A0D2E6;
+}
+
+/*Imagen de la lupa dentro del buscador*/
+#lupa {
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding-right: 4px;
+}
+
+#logoPagina,
+#hamb {
+    display: none;
+}
+
+#logoPagina img,
+#hamb {
+    width: 45px;
+    height: 60px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    padding-left: 2vh;
+}
+
+aside article {
+    border: solid black 2px;
+    margin: 2vh;
+    padding: 1vh;
+}
+
+footer li {
+    display: inline-block;
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url("../imagenes/redesSociales.png");
+    background-repeat: no-repeat;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:nth-child(1) li {
+    background-position: -2px 0px;
+}
+
+footer a:nth-child(2) li {
+    background-position: -52px 0px;
+}
+
+footer a:nth-child(3) li {
+    background-position: -104px 0px;
+}
+
+aside table {
+    border: solid black 1px;
+    width: 100%;
+}
+.alumno:nth-child(2n){
+    background-color: #9A9FA8;
+}
+
+aside td {
+    border-left: solid black 1px;
+}
+
+@media (max-width: 550px) {
+    body {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "header""nav""main""aside""footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        height: 90px;
+    }
+
+    header {
+        display: none;
+    }
+
+    #busqueda,
+    footer span {
+        display: none;
+    }
+
+    #hamb,
+    #logoPagina {
+        display: block;
+    }
+
+    #men li {
+        display: block;
+    }
+
+    #men {
+        display: none;
+        position: relative;
+        top: 50px;
+        padding: 20px;
+    }
+
+
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 800px) {
+    nav ul {
+        justify-content: flex-end;
+    }
+}
+
+@media print {
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "header""main""aside";
+    }
+
+    aside {
+        background-color: gray;
+    }
+
+    footer,
+    nav,
+    #men {
+        display: none;
+    }
+}

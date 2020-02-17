@@ -1,0 +1,305 @@
+body {
+    background-color: #A0D2E6;
+    font-family: Verdana, Geneva, sans-serif;
+    display: grid;
+    grid-template-rows: 2fr 1fr 5fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "header header""nav nav""main aside""footer footer";
+    min-width: 360px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+header>div {
+    display: inline-block;
+}
+
+#logoo img {
+    text-align: center;
+    margin: auto;
+}
+
+header img {
+    display: block;
+}
+
+#contact img {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+nav {
+    grid-area: nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#men li {
+    display: none;
+    border: solid black 2px;
+    padding: 0;
+    padding-left: 4vh;
+    padding-right: 4vh;
+}
+
+li {
+    list-style: none;
+}
+
+
+main>ul>li {
+    border: solid black 1px;
+    background-color: #9A9FA8;
+    font-size: 30px;
+    box-shadow: black 3px 0px;
+    width: 100%;
+}
+
+main>ul>li:hover {
+    background-color: rgb(184, 187, 184);
+    font-size: 32px;
+
+}
+
+main>ul>li>ul>li {
+    background-color: #FDFEFD;
+    font-size: 17px;
+}
+
+main>ul>li>ul>li>ul>li {
+    background-color: #9A9FA8;
+    border: solid black 1px;
+    box-shadow: black 3px 0px;
+    width: 100%;
+}
+
+
+main ul {
+    margin-right: 2vh;
+}
+
+main li>span {
+    border: solid black 1px;
+    width: 100%;
+    display: block;
+}
+
+p>span {
+    float: right;
+    margin-right: 5px;
+}
+
+
+main {
+    grid-area: main;
+    background-color: #DCE9EC;
+
+    overflow: auto;
+}
+
+#migas {
+    font-size: 18px;
+    border-bottom: black 1px solid;
+    border-right: black 1px solid;
+}
+
+#notafinal {
+    width: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+aside {
+    grid-area: aside;
+    background-color: #DCE9EC;
+    overflow: auto;
+
+}
+
+footer {
+    grid-area: footer;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+
+#busqueda {
+    float: right;
+    border: 2px solid black;
+    right: 0;
+    bottom: 5px;
+    padding: 5px;
+    border-radius: 40px;
+    margin-right: 5px;
+    width: 130px;
+}
+
+/*Cuadro de busqueda dentro del buscador*/
+#cuadroBusqueda {
+    border: none;
+    width: 90px;
+    margin-right: 10px;
+    height: 20px;
+    margin-left: 4px;
+    background-color: #A0D2E6;
+}
+
+/*Imagen de la lupa dentro del buscador*/
+#lupa {
+    width: 20px;
+    height: 20px;
+    float: right;
+    padding-right: 4px;
+}
+
+#logoPagina,
+#hamb {
+    display: none;
+}
+
+#logoPagina img,
+#hamb {
+    width: 45px;
+    height: 60px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    padding-left: 2vh;
+}
+
+aside article {
+    border: solid black 2px;
+    margin: 2vh;
+    padding: 1vh;
+}
+
+footer li {
+    display: inline-block;
+    border-radius: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url("../imagenes/redesSociales.png");
+    background-repeat: no-repeat;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer a:nth-child(1) li {
+    background-position: -2px 0px;
+}
+
+footer a:nth-child(2) li {
+    background-position: -52px 0px;
+}
+
+footer a:nth-child(3) li {
+    background-position: -104px 0px;
+}
+
+aside table {
+    border: solid black 1px;
+}
+
+aside td {
+    border-left: solid black 1px;
+}
+
+@media (max-width: 550px) {
+    body {
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+        grid-template-areas: "header""nav""main""aside""footer";
+    }
+
+    nav ul {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer {
+        height: 90px;
+    }
+
+    header {
+        display: none;
+    }
+
+    #busqueda,
+    footer span {
+        display: none;
+    }
+
+    #hamb,
+    #logoPagina {
+        display: block;
+    }
+
+    #men li {
+        display: block;
+    }
+
+    #men {
+        position: relative;
+        top: 50px;
+        padding: 20px;
+    }
+
+    #men li {
+        border: none;
+    }
+
+}
+
+@media (min-width: 600px) {
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (min-width: 800px) {
+    nav ul {
+        justify-content: flex-end;
+    }
+}
+
+@media print {
+    body {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas: "header""main""aside";
+    }
+
+    aside {
+        background-color: gray;
+    }
+
+    footer,
+    nav,
+    #men {
+        display: none;
+    }
+}
